@@ -1,0 +1,33 @@
+basePath: /api/v1
+definitions:
+  model.Response:
+    properties:
+      message:
+        example: response message
+        type: string
+    type: object
+host: localhost:5555
+info:
+  contact:
+    email: raitermark@proton.me
+    name: Mark Raiter
+  description: This is a test API for BAD test.
+  title: BAD test API
+  version: "1.0"
+paths:
+  /health:
+    get:
+      consumes:
+      - '*/*'
+      description: Ping health of API for Docker.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Response'
+      summary: Shows the status of server.
+      tags:
+      - Health
+swagger: "2.0"
