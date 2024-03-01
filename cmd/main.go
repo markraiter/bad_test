@@ -9,7 +9,6 @@ import (
 
 	_ "github.com/markraiter/bad_test/docs"
 
-	"github.com/go-playground/validator"
 	"github.com/markraiter/bad_test/internal/app/api"
 	"github.com/markraiter/bad_test/internal/app/api/handler"
 	"github.com/markraiter/bad_test/internal/app/service"
@@ -34,10 +33,6 @@ func main() {
 	// Initialize logger.
 	log := slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelDebug}))
 
-	// Initialize validator.
-	// Register custom validators.
-	validate := validator.New()
-
 	log.Info("Starting application...")
 	log.Info("port: " + cfg.Server.AppAddress)
 
@@ -45,7 +40,7 @@ func main() {
 	service := service.New(log)
 
 	// Initialize transport layer.
-	handler := handler.New(service, log, validate, cfg)
+	handler := handler.New(service, log)
 
 	// Initialize server.
 	server := api.New(cfg, handler)

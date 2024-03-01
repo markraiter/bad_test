@@ -16,5 +16,5 @@ func (s Server) initRoutes(app *fiber.App, handler *handler.Handler, cfg *config
 
 	app.Get(apiPrefix+"/health", timeout.NewWithContext(handler.APIHealth, cfg.Server.AppReadTimeout))
 
-	// app.Post(apiPrefix+"/values", timeout.NewWithContext(handler.Values, cfg.Server.AppReadTimeout))
+	app.Post(apiPrefix+"/task", timeout.NewWithContext(handler.TaskHandler.FindValues, cfg.Server.AppWriteTimeout))
 }

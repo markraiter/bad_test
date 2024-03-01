@@ -7,7 +7,6 @@ import (
 )
 
 type Config struct {
-	Env    string `env:"ENV" env-default:"local"`
 	Server Server
 }
 
@@ -21,11 +20,6 @@ type Server struct {
 // MustLoad returns Config in case no error
 // If an error occurs, the app won't run and through a panic.
 func MustLoad() *Config {
-	// err := godotenv.Load(".env")
-	// if err != nil {
-	// 	panic("error loading environment variables")
-	// }
-
 	var cfg Config
 
 	if err := cleanenv.ReadEnv(&cfg); err != nil {

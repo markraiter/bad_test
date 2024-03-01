@@ -6,7 +6,6 @@ import (
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/markraiter/bad_test/internal/app/api/handler"
@@ -15,7 +14,7 @@ import (
 )
 
 const (
-	bodyLimit = 5 * 1024 * 1024
+	bodyLimit = 100 * 1024 * 1024
 )
 
 type Server struct {
@@ -53,9 +52,8 @@ func New(cfg *config.Config, handler *handler.Handler) *Server {
 	server.HTTPServer.Use(recover.New())
 
 	server.HTTPServer.Use(logger.New())
-	// server.HTTPServer.Use(middlewares.LoggerMiddleware(log))
 
-	server.HTTPServer.Use(cors.New(corsConfig()))
+	// server.HTTPServer.Use(cors.New(corsConfig()))
 
 	server.initRoutes(server.HTTPServer, handler, cfg)
 
@@ -68,11 +66,11 @@ func (s *Server) Shutdown(ctx context.Context) error {
 	return fmt.Errorf("%s: %w", op, s.HTTPServer.ShutdownWithContext(ctx))
 }
 
-func corsConfig() cors.Config {
-	return cors.Config{
-		AllowOrigins:     `*`,
-		AllowHeaders:     "Origin, Content-Type, Accept, Access-Control-Allow-Credentials",
-		AllowMethods:     "POST",
-		AllowCredentials: false,
-	}
-}
+// func corsConfig() cors.Config {
+// 	return cors.Config{
+// 		AllowOrigins:     `*`,
+// 		AllowHeaders:     "Origin, Content-Type, Accept, Access-Control-Allow-Credentials",
+// 		AllowMethods:     "POST",
+// 		AllowCredentials: false,
+// 	}
+// }

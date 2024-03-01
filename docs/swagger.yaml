@@ -30,4 +30,33 @@ paths:
       summary: Shows the status of server.
       tags:
       - Health
+  /task:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Find values
+      parameters:
+      - description: File
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/model.Response'
+      summary: Find values
+      tags:
+      - task
 swagger: "2.0"
