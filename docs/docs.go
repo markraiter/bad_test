@@ -20,7 +20,7 @@ const docTemplate = `{
     "paths": {
         "/task": {
             "post": {
-                "description": "Web service that receives a .txt file with numbers and returns ` + "`" + `min` + "`" + `, ` + "`" + `max` + "`" + `, ` + "`" + `median` + "`" + `, ` + "`" + `average` + "`" + `, ` + "`" + `max increasing sequential` + "`" + ` and ` + "`" + `max decreasing sequential` + "`" + ` of the numbers.",
+                "description": "Web service that receives a ` + "`" + `.txt` + "`" + ` file with numbers and returns ` + "`" + `min` + "`" + `, ` + "`" + `max` + "`" + `, ` + "`" + `median` + "`" + `, ` + "`" + `average` + "`" + `, ` + "`" + `max increasing sequential` + "`" + `, ` + "`" + `max decreasing sequential` + "`" + ` and ` + "`" + `execution time` + "`" + ` of the numbers.",
                 "consumes": [
                     "multipart/form-data"
                 ],
@@ -34,7 +34,7 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "file",
-                        "description": "Please insert your .txt file here",
+                        "description": "Please insert your ` + "`" + `.txt` + "`" + ` file here",
                         "name": "file",
                         "in": "formData",
                         "required": true
