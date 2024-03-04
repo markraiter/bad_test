@@ -9,7 +9,7 @@ tasks:
     cmds:
       - swag init --outputTypes go,yaml -g cmd/main.go internal/model
 
-    deploy:
+  deploy:
     cmds:
       - git stash
       - git pull
