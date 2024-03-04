@@ -1,6 +1,6 @@
 ########-- Build stage --########
 
-FROM golang:1.21-alpine AS builder
+FROM golang:1.22-alpine AS builder
 LABEL authors="MarkRaiter"
 
 WORKDIR /opt
