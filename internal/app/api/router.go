@@ -14,6 +14,5 @@ const apiPrefix = "/api/v1"
 func (s Server) initRoutes(app *fiber.App, handler *handler.Handler, cfg *config.Config) {
 	app.Get("/swagger/*", swagger.HandlerDefault)
 
-	app.Get(apiPrefix+"/health", timeout.NewWithContext(handler.APIHealth, cfg.Server.AppReadTimeout))
 	app.Post(apiPrefix+"/task", timeout.NewWithContext(handler.TaskHandler.FindValues, cfg.Server.AppWriteTimeout))
 }
