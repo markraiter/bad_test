@@ -7,20 +7,6 @@ tasks:
     cmds:
       - go run cmd/main.go
 
-  lintcheck:
-    cmds:
-      - golangci-lint run
-
-  test:
-    cmds:
-      - go test ./...
-
-  coverage:
-    cmds:
-      - go test ./... -coverprofile=coverage.out
-      - go tool cover -html=coverage.out -o coverage.html
-      - xdg-open ./coverage.html
-
   swaginit:
     cmds:
       - swag init --outputTypes go,yaml -g cmd/main.go internal/model

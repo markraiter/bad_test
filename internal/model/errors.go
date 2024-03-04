@@ -1,6 +1,9 @@
 package model
 
-import "errors"
+import (
+	"errors"
+	"log/slog"
+)
 
 var (
 	ErrNoFile                 = errors.New("no file")
@@ -8,3 +11,10 @@ var (
 	ErrFileExtensionViolation = errors.New("file extension violation")
 	ErrInvalidFileContent     = errors.New("invalid file content")
 )
+
+func Err(err error) slog.Attr {
+	return slog.Attr{
+		Key:   "error",
+		Value: slog.StringValue(err.Error()),
+	}
+}
