@@ -51,7 +51,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "task"
+                    "Task"
                 ],
                 "summary": "Find values",
                 "parameters": [
@@ -106,7 +106,7 @@ var SwaggerInfo = &swag.Spec{
 	BasePath:         "/api/v1",
 	Schemes:          []string{},
 	Title:            "BAD test API",
-	Description:      "This is a test API for BAD test.",
+	Description:      "This is an API for BAD test.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

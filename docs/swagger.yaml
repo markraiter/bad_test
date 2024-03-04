@@ -11,7 +11,7 @@ info:
   contact:
     email: raitermark@proton.me
     name: Mark Raiter
-  description: This is a test API for BAD test.
+  description: This is an API for BAD test.
   title: BAD test API
   version: "1.0"
 paths:
@@ -58,5 +58,5 @@ paths:
             $ref: '#/definitions/model.Response'
       summary: Find values
       tags:
-      - task
+      - Task
 swagger: "2.0"

@@ -21,10 +21,11 @@ const (
 
 // @title BAD test API
 // @version	1.0
-// @description	This is a test API for BAD test.
+// @description	This is an API for BAD test.
 // @contact.name Mark Raiter
 // @contact.email raitermark@proton.me
 // @host localhost:5555
+// host bad-test.foradmin.pp.ua
 // @BasePath /api/v1
 func main() {
 	// Initialize config.

@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	bodyLimit = 100 * 1024 * 1024
+	bodyLimit = 100 * 1024 * 1024 // 100 MB RESTRICION
 )
 
 type Server struct {
@@ -53,8 +53,6 @@ func New(cfg *config.Config, handler *handler.Handler) *Server {
 
 	server.HTTPServer.Use(logger.New())
 
-	// server.HTTPServer.Use(cors.New(corsConfig()))
-
 	server.initRoutes(server.HTTPServer, handler, cfg)
 
 	return server
@@ -65,12 +63,3 @@ func (s *Server) Shutdown(ctx context.Context) error {
 
 	return fmt.Errorf("%s: %w", op, s.HTTPServer.ShutdownWithContext(ctx))
 }
-
-// func corsConfig() cors.Config {
-// 	return cors.Config{
-// 		AllowOrigins:     `*`,
-// 		AllowHeaders:     "Origin, Content-Type, Accept, Access-Control-Allow-Credentials",
-// 		AllowMethods:     "POST",
-// 		AllowCredentials: false,
-// 	}
-// }
