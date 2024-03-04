@@ -19,9 +19,11 @@ paths:
     post:
       consumes:
       - multipart/form-data
-      description: Find values
+      description: Web service that receives a .txt file with numbers and returns
+        `min`, `max`, `median`, `average`, `max increasing sequential` and `max decreasing
+        sequential` of the numbers.
       parameters:
-      - description: File
+      - description: Please insert your .txt file here
         in: formData
         name: file
         required: true

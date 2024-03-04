@@ -24,11 +24,11 @@ type TaskHandler struct {
 }
 
 // @Summary Find values
-// @Description Find values
+// @Description Web service that receives a .txt file with numbers and returns `min`, `max`, `median`, `average`, `max increasing sequential` and `max decreasing sequential` of the numbers.
 // @Tags Task
 // @Accept multipart/form-data
 // @Produce json
-// @Param file formData file true "File"
+// @Param file formData file true "Please insert your .txt file here"
 // @Success 200 {object} model.Response
 // @Failure 400 {object} model.Response
 // @Failure 500 {object} model.Response
