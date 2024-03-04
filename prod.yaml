@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  msu-back:
+  bad-test:
     build: .
     container_name: bad-test
     restart: unless-stopped
