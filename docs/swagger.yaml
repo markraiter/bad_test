@@ -1,4 +1,4 @@
-basePath: /api/v1
+basePath: /
 definitions:
   model.Response:
     properties:
@@ -6,7 +6,7 @@ definitions:
         example: response message
         type: string
     type: object
-host: localhost:5555
+host: bad-test.foradmin.pp.ua
 info:
   contact:
     email: raitermark@proton.me
@@ -15,21 +15,6 @@ info:
   title: BAD test API
   version: "1.0"
 paths:
-  /health:
-    get:
-      consumes:
-      - '*/*'
-      description: Ping health of API for Docker.
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/model.Response'
-      summary: Shows the status of server.
-      tags:
-      - Health
   /task:
     post:
       consumes:

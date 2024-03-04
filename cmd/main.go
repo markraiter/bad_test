@@ -24,9 +24,9 @@ const (
 // @description	This is an API for BAD test.
 // @contact.name Mark Raiter
 // @contact.email raitermark@proton.me
-// @host localhost:5555
-// host bad-test.foradmin.pp.ua
-// @BasePath /api/v1
+// host localhost:5555
+// @host bad-test.foradmin.pp.ua
+// @BasePath /
 func main() {
 	// Initialize config.
 	cfg := config.MustLoad()

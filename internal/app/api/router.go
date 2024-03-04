@@ -8,11 +8,9 @@ import (
 	"github.com/markraiter/bad_test/internal/config"
 )
 
-const apiPrefix = "/api/v1"
-
 // initRoutes configures the routes for the app.
 func (s Server) initRoutes(app *fiber.App, handler *handler.Handler, cfg *config.Config) {
-	app.Get("/swagger/*", swagger.HandlerDefault)
+	app.Get("/", swagger.HandlerDefault)
 
-	app.Post(apiPrefix+"/task", timeout.NewWithContext(handler.TaskHandler.FindValues, cfg.Server.AppWriteTimeout))
+	app.Post("/task", timeout.NewWithContext(handler.TaskHandler.FindValues, cfg.Server.AppWriteTimeout))
 }

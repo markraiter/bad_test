@@ -18,29 +18,6 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/health": {
-            "get": {
-                "description": "Ping health of API for Docker.",
-                "consumes": [
-                    "*/*"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Health"
-                ],
-                "summary": "Shows the status of server.",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/model.Response"
-                        }
-                    }
-                }
-            }
-        },
         "/task": {
             "post": {
                 "description": "Find values",
@@ -102,8 +79,8 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:5555",
-	BasePath:         "/api/v1",
+	Host:             "bad-test.foradmin.pp.ua",
+	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "BAD test API",
 	Description:      "This is an API for BAD test.",
