@@ -10,7 +10,7 @@ import (
 
 // initRoutes configures the routes for the app.
 func (s Server) initRoutes(app *fiber.App, handler *handler.Handler, cfg *config.Config) {
-	app.Get("/", swagger.HandlerDefault)
+	app.Get("/*", swagger.HandlerDefault)
 
 	app.Post("/task", timeout.NewWithContext(handler.TaskHandler.FindValues, cfg.Server.AppWriteTimeout))
 }
